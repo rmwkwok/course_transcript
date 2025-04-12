@@ -1,0 +1,20 @@
+# Virtual environment
+course_transcript_venv/
+
+# Runtime files
+course_transcript_temp_folder/
+/coursera-dl.conf
+/*.md
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Distribution / packaging
+build/
+*.egg-info/
+
+# Include README.md
+!README.md
