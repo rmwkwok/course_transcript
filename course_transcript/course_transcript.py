@@ -56,7 +56,7 @@ class Markdown:
                 Transcript text
         '''
         text = text.translate(ESCAPE).replace('\n', ' ')
-        indent = ' ' * (Lv.MATERIAL.value - 1) * 2 + '  '
+        indent = ' ' * (Lv.MATERIAL - 1) * 2 + '  '
         self.transcript += f'\n{indent}{text}\n'
 
     @property
@@ -191,7 +191,7 @@ def main():
                 for _json in map(json.loads, f.read().splitlines()):
                     course_slugs.update(_json)
 
-        for ii, name in enumerate(args.class_names):
+        for name in args.class_names:
             # Create a markdown per class_name
             md = Markdown()
 
@@ -205,7 +205,7 @@ def main():
                 c_slugs = [(None, name)]
 
             # Parse syllabuses course by course
-            for jj, (course_num, course_slug) in enumerate(c_slugs):
+            for course_num, course_slug in c_slugs:
                 # Sleep
                 logging.info(
                     'Sleeping for %d seconds before downloading next course. '
