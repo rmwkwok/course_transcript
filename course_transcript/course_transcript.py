@@ -181,6 +181,7 @@ def main():
         # Each course's syllabus will be stored as
         #     f'{course_name}-syllabus-parsed.json'
         coursera_dl.main()
+        logging.info('Syllabuses downloaded. Starting to get transcripts...')
 
         # Load specializations' ordered course slugs for identifying
         # which class_name is specialization, what courses are included, and
